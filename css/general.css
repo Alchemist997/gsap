@@ -1,0 +1,24 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    color: #111;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.fjccaic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    text-transform: uppercase;
+}

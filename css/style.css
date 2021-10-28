@@ -1,0 +1,54 @@
+.fp-part {
+    background-color: #ccc;
+}
+
+.s1 {
+    background: url('https://a.d-cd.net/9fb0b81s-1920.jpg') no-repeat center / cover;
+    background-color: #777;
+}
+
+.s1 .fp-tableCell {
+    display: flex;
+    align-items: stretch;
+}
+
+.s1__block {
+    background-color: transparent;
+    transition: background-color 0.22s ease-in-out;
+    flex-basis: 50%;
+    flex-direction: column;
+}
+
+.s1__block:hover {
+    background-color: rgba(0, 0, 0, 0.32);
+}
+
+.s1__block--right {
+    position: relative;
+}
+
+.s1__block--right::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12%;
+    display: inline-block;
+    width: 1px;
+    height: 70%;
+    background-color: #fff;
+}
+
+.s1__block--right .btn--sec1 {
+    min-width: 70%;
+}
+
+.btn--sec1 {
+    background-color: #fff;
+    min-height: 74px;
+    margin: 15px;
+    padding: 0 25px;
+}
+
+.s2 {
+    background-color: #eee;
+}
