@@ -1,0 +1,68 @@
+.main-aside {
+    position: fixed;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.aside-always {
+    width: 100px;
+    background-color: #191919;
+    color: #fff;
+    z-index: 997;
+}
+
+.aside__el {
+    display: block;
+    padding-bottom: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.aside__el:hover {
+    color: rgb(250, 84, 0);
+}
+
+.aside__el.logo {
+    padding-top: 30px;
+    height: 105px;
+    padding-bottom: 100px;
+}
+
+.aside__el.toggle {
+    height: 220px;
+    display: flex;
+}
+
+.rotate {
+    display: block;
+    transform: rotate(-90deg);
+}
+
+.aside__vacancy {
+    display: inline-flex;
+    width: 0;
+    z-index: 996;
+    background-color: transparent;
+}
+
+.vacancy-left {
+    width: 360px;
+    z-index: 992;
+    position: relative;
+    left: -370px;
+    background-color: #aaa;
+    /* height: 100vh; */
+}
+
+.vacancy-main {
+    width: calc(100vw - 460px);
+    z-index: 991;
+    position: relative;
+    right: 100vw;
+    background-color: #ccc;
+}
