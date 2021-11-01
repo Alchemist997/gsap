@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/aside.css">
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+    <script defer src="js/gsap/aside.js"></script>
     <script defer src="js/fullpage.js"></script>
     <title>GSAP Test</title>
   </head>
@@ -42,7 +44,7 @@
       <aside class="main-aside">
         <div class="aside-always">
           <a href="#" class="aside__el logo">Logo</a>
-          <a href="#" class="aside__el toggle fjccaic">
+          <a href="#" class="aside__el toggle fjccaic vacancyToggleBtn">
             <span class="rotate">Поиск вакансий</span>
           </a>
           <a href="#" class="aside__el toggle fjccaic">
@@ -51,15 +53,22 @@
           <a href="#" class="aside__el">Heart</a>
           <a href="#" class="aside__el">User</a>
         </div>
-        <div class="aside__vacancy">
-          <div class="vacancy-left"></div>
-          <div class="vacancy-main"></div>
+        <div class="aside__vacancy hidden">
+          <div class="vacancy-left">
+            <div class="vacancy-left-text">
+              Доступно <span>500</span><br>
+              открытых<br>вакансий
+            </div>
+          </div>
+          <div class="vacancy-main fjccaic">
+            <a href="https://github.com/Alchemist997/gsap" target="_blank">Ссылка на гитхаб</a>
+          </div>
         </div>
       </aside>
       <main id="fullPage">
           <section class="s1 part active">
               <div class="s1__block s1__block--left fjccaic">
-                  <a href="#" class="fjccaic btn btn--sec1">Поиск вакансий</a>
+                  <a href="#" class="fjccaic btn btn--sec1 vacancyToggleBtn">Поиск вакансий</a>
                   <span></span>
                   <a href="#" class="fjccaic btn btn--sec1">Идеально для тебя</a>
               </div>

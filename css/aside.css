@@ -45,18 +45,26 @@
 
 .aside__vacancy {
     display: inline-flex;
-    width: 0;
     z-index: 996;
     background-color: transparent;
 }
 
+.aside__vacancy.hidden {
+    width: 0;
+}
+
 .vacancy-left {
     width: 360px;
+    padding-left: 32px;
     z-index: 992;
     position: relative;
     left: -370px;
     background-color: #aaa;
-    /* height: 100vh; */
+}
+
+.vacancy-left-text {
+    font-size: 32px;
+    padding-top: 60px;
 }
 
 .vacancy-main {
