@@ -49,6 +49,31 @@
     padding: 0 25px;
 }
 
-.s2 {
+.s2__inner {
     background-color: #eee;
+    display: flex;
+    width: 200vw;
+    height: 200vh;
+}
+
+.s2__part {
+    width: 100vw;
+    height: inherit;
+}
+
+.s2__white-empty {
+    background-color: #fff;
+}
+
+.s2__content {
+    background-color: green;
+}
+
+.s2__top {
+    display: flex;
+    align-items: stretch;
+}
+
+.s2-top__left, .s2-top__right {
+    
 }
