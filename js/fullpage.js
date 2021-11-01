@@ -5,7 +5,7 @@ $('#fullPage').fullpage({
         if (index == 2) {
             // alert(index);
             const anim = gsap.timeline();
-            anim.to('.s2__content', { duration: 0.7, x: '-100%' })
+            anim.fromTo('.s2__content', {x: 0}, { duration: 0.7, x: '-100%' })
                 .fromTo('#img1', { height: 0 }, { height: 'auto', duration: 0.5 })
                 .fromTo('#img3', { height: 0 }, { height: 'auto', duration: 0.7 })
                 .fromTo('#img2', { width: 0 }, { width: '42%', duration: 0.5 })
