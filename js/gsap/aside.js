@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let btn = document.querySelector('#vacancy-toggle-btn');
     let vacancyWrap = document.querySelector('.aside__vacancy');
     let vacancyCounter = document.querySelector('.vacancy-left-text span');
 
@@ -24,11 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 25);
 
+            setTimeout(() => {
+                header.classList.add('white');
+                header.style.width = 'calc(100vw - 460px)';
+            }, 220);
+
             gsap.to('.vacancy-left', { duration: 0.5, x: 370 });
             gsap.to('.vacancy-main', { duration: 0.7, x: vw100, delay: 0.2 });
         } else {
             gsap.to('.vacancy-main', { duration: 0.8, x: 0 });
             gsap.to('.vacancy-left', { duration: 0.5, x: 0, delay: 0.35 });
+            if (leftSlide.classList.contains('sCurrent')) {
+                header.classList.remove('white');
+            }
+            setTimeout(() => {
+                header.style.width = 'auto';
+            }, 400);
             setTimeout(() => {
                 vacancyWrap.classList.add('hidden');
             }, 750);

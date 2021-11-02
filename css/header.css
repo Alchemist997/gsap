@@ -9,8 +9,9 @@
     color: #fff;
     background-color: transparent;
     font-size: 14px;
-    transition: color 0.3s, background-color 0.3s;
+    transition: 0.3s;
     border-bottom: 1px solid transparent;
+    overflow: hidden;
 }
 
 .main-header.white {
@@ -20,6 +21,7 @@
 }
 
 .header__link {
+    flex-shrink: 0;
     position: relative;
     height: inherit;
     padding-left: 22px;
