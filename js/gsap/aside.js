@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let vw100 = document.documentElement.clientWidth;
 
     document.body.addEventListener('click', evt => {
-        evt.preventDefault();
+        if (!evt.target.classList.contains('gh')) {
+            evt.preventDefault();
+        }
         if (!evt.target.closest('.vacancyToggleBtn')) {
             return;
         }
