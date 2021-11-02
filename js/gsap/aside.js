@@ -25,17 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 25);
 
             gsap.to('.vacancy-left', { duration: 0.5, x: 370 });
-            setTimeout(() => {
-                gsap.to('.vacancy-main', { duration: 0.7, x: vw100 });
-            }, 200);
+            gsap.to('.vacancy-main', { duration: 0.7, x: vw100, delay: 0.2 });
         } else {
             gsap.to('.vacancy-main', { duration: 0.8, x: 0 });
-            setTimeout(() => {
-                gsap.to('.vacancy-left', { duration: 0.5, x: 0 });
-            }, 300);
+            gsap.to('.vacancy-left', { duration: 0.5, x: 0, delay: 0.35 });
             setTimeout(() => {
                 vacancyWrap.classList.add('hidden');
-            }, 700);
+            }, 750);
         }
     });
 })
