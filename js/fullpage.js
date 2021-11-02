@@ -1,20 +1,52 @@
 let header = document.querySelector('.main-header');
+let bmwBtn = document.querySelector('#bmwBtn');
+let leftSlide = document.querySelector('.s1');
+let rightSlide = document.querySelector('.s2');
 
 $('#fullPage').fullpage({
     sectionSelector: '.part',
+    // autoScrolling: false,
     scrollOverflow: true,
-    afterLoad: function (link, index) {
-        if (index == 2) {
-            header.classList.add('white')
-            // alert(index);
-            const anim = gsap.timeline();
-            anim.fromTo('.s2__content', {x: 0}, { duration: 0.7, x: '-100%' })
-                .fromTo('#img1', { height: 0 }, { height: 'auto', duration: 0.5 })
-                .fromTo('#img3', { height: 0 }, { height: 'auto', duration: 0.7 })
-                .fromTo('#img2', { width: 0 }, { width: '42%', duration: 0.5 })
-                .fromTo('.s2-top__left span', { opacity: 0 }, { opacity: 1, duration: 1.5 });
+    // scrollBar: true,
+    controlArrows: false,
+    onSlideLeave: function (section, origin, destination, direction) {
+        if (destination == 0) {
+            setTimeout(() => {
+                header.classList.add('white');
+            }, 200);
         } else {
-            header.classList.remove('white')
+            header.classList.remove('white');
         }
     }
+});
+
+let tl = gsap.timeline();
+tl.to('#img1 .img-cap', { top: '100%', duration: 0.7, delay: 0.7 })
+    .to('#img2 .img-cap', { bottom: '100%', duration: 0.7, delay: -0.7 })
+    .to('#img3 .img-cap', { left: '100%', duration: 0.7, delay: -0.7 })
+    .fromTo('.s2-top__left', { opacity: 0 }, { opacity: 1, duration: 1 });
+tl.pause();
+
+document.addEventListener('wheel', evt => {
+    console.log(rightSlide.offsetTop);
+    if (evt.deltaY > 0 && leftSlide.classList.contains('sCurrent')) {
+        $.fn.fullpage.moveSlideRight();
+        leftSlide.classList.remove('sCurrent');
+        rightSlide.classList.add('sCurrent');
+        tl.play();
+    } else if (evt.deltaY < 0 && !leftSlide.classList.contains('sCurrent')) {
+        setTimeout(() => {
+            $.fn.fullpage.moveSlideLeft();
+        }, 1700);
+        leftSlide.classList.add('sCurrent');
+        rightSlide.classList.remove('sCurrent');
+        tl.reverse();
+    }
+});
+
+bmwBtn.addEventListener('click', () => {
+    $.fn.fullpage.moveSlideRight();
+    leftSlide.classList.remove('sCurrent');
+    rightSlide.classList.add('sCurrent');
+    tl.play();
 });
