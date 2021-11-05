@@ -48,9 +48,21 @@ document.addEventListener('wheel', evt => {
         leftSlide.classList.remove('sCurrent');
         rightSlide.classList.add('sCurrent');
         tl.play();
-    } else if (evt.deltaY < 0 && !leftSlide.classList.contains('sCurrent') &&
-        rightSlideWrap.style.transform.indexOf('translate(0px)') > -1) {
-
+    } else if (evt.deltaY < 0 && !leftSlide.classList.contains('sCurrent') && rightSlideWrap) {
+        if (rightSlideWrap.style.transform.indexOf('translate(0px)') > -1 || rightSlideWrap.style.transform.indexOf('translate(0px, 0px)') > -1) {
+            if (rightOnTop <= 3) {
+                rightOnTop++;
+            } else {
+                rightOnTop = 0;
+                setTimeout(() => {
+                    $.fn.fullpage.moveSlideLeft();
+                }, 1700);
+                leftSlide.classList.add('sCurrent');
+                rightSlide.classList.remove('sCurrent');
+                tl.reverse();
+            }
+        }
+    } else if (evt.deltaY < 0 && !rightSlideWrap) {
         if (rightOnTop <= 3) {
             rightOnTop++;
         } else {
